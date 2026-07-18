@@ -12,7 +12,7 @@ export const useScrapeDates = () => {
     const { data: html } = await axios.get(SHOWS_SITE);
     const $ = cheerio.load(html);
     const events = $("#events > a").map((_, el): ShowEvent => {
-      const link = $(el).attr("href")
+      const link = $(el).attr("href") ?? SHOWS_SITE;
       const date = $(el).find(".date").text().trim();
       const hour = $(el).find(".single-light").text().trim();
       const location = $(el).find(".single-place-string").text().trim();
