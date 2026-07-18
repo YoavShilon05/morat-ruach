@@ -1,6 +1,6 @@
 import {Box, Button, Heading, Text, VStack, HStack, Icon} from "@chakra-ui/react"
 import {ChevronDown } from "lucide-react"
-import heroImage from "@/assets/hero-cover.jpg"
+import heroImage from "@/assets/images/hero-cover.jpg"
 import {chalkTexture} from "@/components/SectionHeading/SectionHeading.tsx";
 import {whatsappLink} from "@/pages/content.ts";
 import WhatsappIcon from "@/assets/icons/whatsapp.svg?react"

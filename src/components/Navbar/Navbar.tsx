@@ -1,10 +1,11 @@
-import {Box, Flex, HStack, Link, Text, IconButton, Icon} from "@chakra-ui/react"
+import {Box, Flex, HStack, Link, Image, IconButton, Icon} from "@chakra-ui/react"
 import { useState } from "react"
 import {Menu, X} from "lucide-react"
 import {NAV_LINKS, SOCIAL_LINKS} from "@/pages/content.ts";
 import InstagramIcon from "@/assets/icons/instagram.svg?react";
 import SpotifyIcon from "@/assets/icons/spotify.svg?react";
 import FacebookIcon from "@/assets/icons/facebook.svg?react";
+import Logo from "@/assets/logos/logo.png"
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -24,17 +25,19 @@ export default function Navbar() {
         maxW="7xl"
         mx="auto"
         px={{ base: 4, md: 8 }}
-        py={5}
+        h="80px"
         align="center"
         justify="space-between"
       >
         {/* Logo placeholder — rightmost item in RTL flow */}
-        <Text fontFamily="heading" fontSize="2xl" fontWeight="800" color="text.onDark">
-          מורת רוח{" "}
-          <Text as="span" fontSize="sm" fontFamily="body" opacity={0.5}>
-            (לוגו)
-          </Text>
-        </Text>
+        <Box h="100%" display="flex" alignItems="center">
+          <Image
+            src={Logo}
+            maxH="100%"
+            w="auto"
+            objectFit="contain"
+          />
+        </Box>
 
         <Box display={{ base: "none", lg: "block" }}>
           <HStack gap={6}>
