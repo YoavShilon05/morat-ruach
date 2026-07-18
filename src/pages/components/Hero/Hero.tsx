@@ -28,9 +28,9 @@ export default function Hero() {
         px={6}
         gap={5}
       >
-        <Text fontFamily="body" color="accent.solid" letterSpacing="wide" fontWeight="600">
-          שלושה מורים. מופע אחד. הרבה יותר מדי אמת
-        </Text>
+        {/*<Text fontFamily="body" color="accent.solid" letterSpacing="wide" fontWeight="600">*/}
+        {/*  שלושה מורים. מופע אחד. הרבה יותר מדי אמת*/}
+        {/*</Text>*/}
         <Heading
           as="h1"
           fontFamily="heading"
@@ -40,7 +40,7 @@ export default function Hero() {
           maxW="4xl"
           lineHeight="1.15"
         >
-          מורת רוח - המופע הסאטירי־מוזיקלי שכל חדר מורים חייב לראות
+          מורת רוח - המופע שכל חדר המורים חייב לראות
         </Heading>
         <Text fontFamily="body" fontSize={{ base: "md", md: "lg" }} color="text.onDark" opacity={0.9} maxW="2xl">
           75 דקות של צחוק בלתי פוסק, קצת דמעות, והמון "איזה כיף לדעת שכולם מרגישים כמונו".

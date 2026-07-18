@@ -1,7 +1,8 @@
-import { Box, Center, VStack } from "@chakra-ui/react"
-import { Play } from "lucide-react"
-import SectionHeading from "@/components/SectionHeading/SectionHeading.tsx";
-import Reveal from "@/components/Reveal/Reveal.tsx";
+import { Box, VStack, Card, AspectRatio, chakra } from "@chakra-ui/react"
+import SectionHeading from "@/components/SectionHeading/SectionHeading.tsx"
+import Reveal from "@/components/Reveal/Reveal.tsx"
+import trailerVideo from "@/assets/videos/trailer_web.mp4"
+import trailerPoster from "@/assets/videos/trailer-poster.png"
 
 export default function TrailerSection() {
   return (
@@ -10,27 +11,28 @@ export default function TrailerSection() {
         <Reveal>
           <SectionHeading eyebrow="טעימה קטנה" title="הטריילר של המופע" onDark />
         </Reveal>
+
         <Reveal delay={0.1} width="100%">
-          <Center
-            as="button"
-            w="100%"
-            aspectRatio={16 / 9}
-            borderRadius="xl"
+          <Card.Root
+            variant="elevated"
             bg="board.700"
-            border="2px dashed"
-            borderColor="board.400"
-            _hover={{ bg: "board.600", transform: "scale(1.01)" }}
+            overflow="hidden"
             transition="all 0.3s ease"
-            flexDirection="column"
-            gap={3}
           >
-            <Center bg="accent.solid" borderRadius="full" boxSize="72px">
-              <Play size={28} color="var(--chakra-colors-board-900)" fill="var(--chakra-colors-board-900)" />
-            </Center>
-            <Box fontFamily="body" color="text.onDark" opacity={0.75}>
-              וידאו טריילר — יתווסף בהמשך
-            </Box>
-          </Center>
+            <AspectRatio ratio={4 / 3} width="100%" bg="board.600">
+              <chakra.video
+                src={trailerVideo}
+                poster={trailerPoster}
+                controls
+                preload="metadata"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "contain",
+                }}
+              />
+            </AspectRatio>
+          </Card.Root>
         </Reveal>
       </VStack>
     </Box>

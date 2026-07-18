@@ -36,21 +36,21 @@ export const ABOUT_TEXT = `שלישיית 'מורת רוח' נולדה בשנת 
 
 export const MEMBERS = [
   { name: "ברק גונן", role: "מורה לתיאטרון" },
-  { name: "דורון בן־עמי", role: "מורה להיסטוריה, מוזיקה ומזרחנות" },
+  { name: "דורון בן עמי", role: "מורה להיסטוריה, מוזיקה ומזרחנות" },
   { name: "מיה שילון", role: "מורה ללשון" },
 ]
 
 // Real links kept for future wiring, but rendered as placeholder tiles for now.
-export const VIDEO_LINKS = [
-  "https://www.youtube.com/watch?v=uRNIZ_OTRZU",
-  "https://www.youtube.com/watch?v=NfV6kPLN0vU",
-  "https://www.youtube.com/watch?v=P2vtrqhLT1Y",
-  "https://www.youtube.com/watch?v=lrYy58DmzKk",
-  "https://www.youtube.com/watch?v=ELWGX_kUaRc",
-  "https://www.youtube.com/watch?v=-LRYc33D8fw",
-  "https://www.youtube.com/watch?v=d7xSa25kJE4",
-  "https://www.youtube.com/watch?v=LmSEaLqFQRo",
-  "https://www.youtube.com/watch?v=aGKoF4UQ9KI",
+export const VIDEOS = [
+  {href: "https://www.youtube.com/watch?v=uRNIZ_OTRZU", title: "אולי בקיץ ניפגש"},
+  {href: "https://www.youtube.com/watch?v=NfV6kPLN0vU", title: "הם ייקחו אותך"},
+  {href: "https://www.youtube.com/watch?v=P2vtrqhLT1Y", title: "שפת הפוליטיקלי קורקט"},
+  {href: "https://www.youtube.com/watch?v=lrYy58DmzKk", title: "שוב ממציאים לנו רפור"},
+  {href: "https://www.youtube.com/watch?v=ELWGX_kUaRc", title: "מסדרון המזכירות"},
+  {href: "https://www.youtube.com/watch?v=-LRYc33D8fw", title: "בלדה על שש שנים של ותק שעוד לא הוכר"},
+  {href: "https://www.youtube.com/watch?v=d7xSa25kJE4", title: "המורים של חיילי אוקטובר עשרים ושלוש"},
+  {href: "https://www.youtube.com/watch?v=LmSEaLqFQRo", title: "עוד שביתה"},
+  {href: "https://www.youtube.com/watch?v=aGKoF4UQ9KI", title: "שלושה מורים עלו על הבמה עם אמת כואבת - ועשו מזה סאטירה"},
 ]
 
 export const PRESS_MENTIONS = [
