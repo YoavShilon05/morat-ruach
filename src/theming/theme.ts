@@ -64,8 +64,8 @@ const config = defineConfig({
         },
       },
       fonts: {
-        heading: { value: "'Frank Ruhl Libre', serif" },
-        body: { value: "'Heebo', sans-serif" },
+        heading: { value: "Heebo, sans-serif" },
+        body: { value: "Heebo, sans-serif" },
       },
     },
     semanticTokens: {

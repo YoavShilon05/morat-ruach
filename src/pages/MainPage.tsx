@@ -13,7 +13,6 @@ import ShowSchedule from "@/pages/components/ShowSchedule/ShowSchedule.tsx";
 export const MainPage = () => {
   return (
     <>
-MAIN PAGE BITCH
       <Box dir="rtl">
         <Navbar />
         <Hero />
