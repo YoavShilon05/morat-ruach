@@ -2,6 +2,7 @@
 // and the real client can hand you text edits without touching component code.
 
 export const WHATSAPP_NUMBER = "972528746558" // 052-874-6558
+export const SHOWS_SITE = "/comy/event/morat/"
 export const whatsappLink = (text: string) =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`
 

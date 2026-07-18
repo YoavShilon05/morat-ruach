@@ -62,7 +62,7 @@ function VideoCard({ index, video }: { index: number; video: {href: string, titl
           />
         ) : (
           <Box
-            as="button"
+            as="div"
             onClick={() => setIsPlaying(true)}
             width="100%"
             height="100%"
