@@ -39,7 +39,7 @@ export function EventCard({ event }: { event: ShowEvent }) {
 
           {/* Action Link wrapper around the Button */}
           <Link href={event.link} target="_blank" rel="noreferrer" _hover={{ textDecoration: "none" }}>
-            <Button colorPalette="orange" size="sm" px={6} width="100%">
+            <Button bg="accent.cta" size="sm" px={6} width="100%">
               הזמנת כרטיסים
             </Button>
           </Link>

@@ -1,7 +1,10 @@
-import { Box, Flex, HStack, Link, Text, IconButton } from "@chakra-ui/react"
+import {Box, Flex, HStack, Link, Text, IconButton, Icon} from "@chakra-ui/react"
 import { useState } from "react"
-import {Mic2, Menu, X, CircleFadingPlus} from "lucide-react"
+import {Menu, X} from "lucide-react"
 import {NAV_LINKS, SOCIAL_LINKS} from "@/pages/content.ts";
+import InstagramIcon from "@/assets/icons/instagram.svg?react";
+import SpotifyIcon from "@/assets/icons/spotify.svg?react";
+import FacebookIcon from "@/assets/icons/facebook.svg?react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -21,14 +24,14 @@ export default function Navbar() {
         maxW="7xl"
         mx="auto"
         px={{ base: 4, md: 8 }}
-        py={3}
+        py={5}
         align="center"
         justify="space-between"
       >
         {/* Logo placeholder — rightmost item in RTL flow */}
-        <Text fontFamily="heading" fontSize="xl" fontWeight="800" color="text.onDark">
+        <Text fontFamily="heading" fontSize="2xl" fontWeight="800" color="text.onDark">
           מורת רוח{" "}
-          <Text as="span" fontSize="xs" fontFamily="body" opacity={0.5}>
+          <Text as="span" fontSize="sm" fontFamily="body" opacity={0.5}>
             (לוגו)
           </Text>
         </Text>
@@ -40,7 +43,7 @@ export default function Navbar() {
                 key={link.label}
                 href={link.href}
                 fontFamily="body"
-                fontSize="sm"
+                fontSize="md"
                 color="text.onDark"
                 opacity={0.85}
                 _hover={{ opacity: 1, color: "accent.solid" }}
@@ -51,7 +54,7 @@ export default function Navbar() {
           </HStack>
         </Box>
 
-        <HStack gap={2}>
+        <HStack gap={3}>
           <Box display={{ base: "none", lg: "block" }}>
             <SocialIcons />
           </Box>
@@ -60,9 +63,10 @@ export default function Navbar() {
               aria-label="פתיחת תפריט"
               variant="ghost"
               color="text.onDark"
+              size="lg"
               onClick={() => setOpen((v) => !v)}
             >
-              {open ? <X size={20} /> : <Menu size={20} />}
+              {open ? <X size={24} /> : <Menu size={24} />}
             </IconButton>
           </Box>
         </HStack>
@@ -93,22 +97,16 @@ export default function Navbar() {
 
 function SocialIcons() {
   return (
-    <HStack gap={1}>
-      <IconButton asChild aria-label="פייסבוק" variant="ghost" color="text.onDark" size="sm">
-        <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noreferrer">
-          <CircleFadingPlus size={18} />
-        </a>
-      </IconButton>
-      <IconButton asChild aria-label="אינסטגרם" variant="ghost" color="text.onDark" size="sm">
-        <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noreferrer">
-          <CircleFadingPlus size={18} />
-        </a>
-      </IconButton>
-      <IconButton asChild aria-label="פודקאסט" variant="ghost" color="text.onDark" size="sm">
-        <a href={SOCIAL_LINKS.podcast} target="_blank" rel="noreferrer">
-          <Mic2 size={18} />
-        </a>
-      </IconButton>
+    <HStack gap={4} color="text.onDark">
+      <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noreferrer">
+        <Icon as={FacebookIcon} boxSize={7} />
+      </a>
+      <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noreferrer">
+        <Icon as={InstagramIcon} boxSize={7} />
+      </a>
+      <a href={SOCIAL_LINKS.podcast} target="_blank" rel="noreferrer">
+        <Icon as={SpotifyIcon} boxSize={7} />
+      </a>
     </HStack>
   )
 }

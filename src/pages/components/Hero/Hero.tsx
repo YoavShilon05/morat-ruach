@@ -1,8 +1,9 @@
-import { Box, Button, Heading, Text, VStack, HStack } from "@chakra-ui/react"
-import { MessageCircle, ChevronDown } from "lucide-react"
+import {Box, Button, Heading, Text, VStack, HStack, Icon} from "@chakra-ui/react"
+import {ChevronDown } from "lucide-react"
 import heroImage from "@/assets/hero-cover.jpg"
 import {chalkTexture} from "@/components/SectionHeading/SectionHeading.tsx";
 import {whatsappLink} from "@/pages/content.ts";
+import WhatsappIcon from "@/assets/icons/whatsapp.svg?react"
 
 export default function Hero() {
   return (
@@ -56,7 +57,7 @@ export default function Hero() {
             fontWeight="700"
           >
             <a href={whatsappLink("היי, נשמח לשמוע פרטים על הזמנת המופע!")} target="_blank" rel="noreferrer">
-              <MessageCircle size={18} style={{ marginInlineStart: 8 }} />
+              <Icon as={WhatsappIcon} boxSize={10} />
               הזמינו אותנו לחדר המורים
             </a>
           </Button>

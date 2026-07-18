@@ -1,7 +1,8 @@
 import { Box, Button, Heading, Text, VStack } from "@chakra-ui/react"
-import { MessageCircle } from "lucide-react"
 import Reveal from "@/components/Reveal/Reveal.tsx";
 import {whatsappLink} from "@/pages/content.ts";
+import WhatsappIcon from "@/assets/icons/whatsapp.svg?react"
+import { Icon } from "@chakra-ui/react"
 
 export default function InviteCTA() {
   return (
@@ -24,7 +25,7 @@ export default function InviteCTA() {
             fontWeight="700"
           >
             <a href={whatsappLink("היי, נשמח לקבל פרטים על הזמנת המופע לחדר המורים שלנו!")} target="_blank" rel="noreferrer">
-              <MessageCircle size={18} style={{ marginInlineStart: 8 }} />
+              <Icon as={WhatsappIcon} boxSize={10} />
               שליחת ווטסאפ למפיקה
             </a>
           </Button>
