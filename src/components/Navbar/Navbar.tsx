@@ -29,15 +29,19 @@ export default function Navbar() {
         align="center"
         justify="space-between"
       >
-        {/* Logo placeholder — rightmost item in RTL flow */}
-        <Box h="100%" display="flex" alignItems="center">
+        <Link
+          href="#top"
+          h="100%"
+          display="flex"
+          alignItems="center"
+        >
           <Image
             src={Logo}
             maxH="100%"
             w="auto"
             objectFit="contain"
           />
-        </Box>
+        </Link>
 
         <Box display={{ base: "none", lg: "block" }}>
           <HStack gap={6}>

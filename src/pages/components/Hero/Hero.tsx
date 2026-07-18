@@ -7,7 +7,7 @@ import WhatsappIcon from "@/assets/icons/whatsapp.svg?react"
 
 export default function Hero() {
   return (
-    <Box position="relative" minH={{ base: "90vh", md: "100vh" }} overflow="hidden" bg="board.900">
+    <Box position="relative" minH={{ base: "90vh", md: "100vh" }} overflow="hidden" bg="board.900" id="top">
       <Box
         position="absolute"
         inset={0}

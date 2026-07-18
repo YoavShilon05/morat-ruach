@@ -15,14 +15,14 @@ export const SOCIAL_LINKS = {
 export const SCHEDULE_LINK = "https://comy.co.il/event/morat/"
 
 export const NAV_LINKS = [
-  { label: "מי אנחנו", href: "#about" },
   { label: "טריילר", href: "#trailer" },
   { label: "וידאו", href: "#videos" },
+  { label: "מי אנחנו", href: "#about" },
   { label: "כתבות", href: "#press" },
-  { label: "צרו קשר", href: "#contact" },
   { label: "לוח הופעות", href: "#schedule" },
+  { label: "שאלות ותשובות", href: "#faq" },
+  { label: "צרו קשר", href: "#contact" },
   { label: "פודקאסט", href: SOCIAL_LINKS.podcast },
-  { label: "שו\"ת", href: "#faq" },
 ]
 
 export const ABOUT_TEXT = `שלישיית 'מורת רוח' נולדה בשנת 2017 בחדר המורים של תיכון 'כצנלסון' בכפר סבא. לכבוד אירוע סוף שנה חגיגי במיוחד הוועד ביקש תוכנית אומנותית, וחברנו יחד.

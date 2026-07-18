@@ -1,7 +1,10 @@
-import {VStack, Card, Text, Flex, Button, For, Link} from "@chakra-ui/react"
+import { useState } from "react"
+import { VStack, Card, Text, Flex, Button, For, Link } from "@chakra-ui/react"
+import { useBreakpointValue } from "@chakra-ui/react"
 import { Calendar, Clock, MapPin } from "lucide-react"
-import {useScrapeDates} from "@/hooks/useScrapeDates.ts";
-import type {ShowEvent} from "@/types/show-event.ts";
+import { useScrapeDates } from "@/hooks/useScrapeDates.ts"
+import type { ShowEvent } from "@/types/show-event.ts"
+import {MOBILE_SHOW_LIMIT} from "@/constants.ts";
 
 export function EventCard({ event }: { event: ShowEvent }) {
   return (
@@ -49,18 +52,40 @@ export function EventCard({ event }: { event: ShowEvent }) {
   )
 }
 
-
 export function EventsList() {
-
   const events = useScrapeDates()
+  const [isExpanded, setIsExpanded] = useState(false)
+  const isMobile = useBreakpointValue({ base: true, sm: false })
+
+  // Slice list if we are on mobile and it hasn't been expanded
+  const displayedEvents = isMobile && !isExpanded
+    ? events.slice(0, MOBILE_SHOW_LIMIT)
+    : events
+
+  const hasHiddenEvents = events.length > MOBILE_SHOW_LIMIT
 
   return (
     <VStack gap={4} width="100%" maxW="3xl" mx="auto">
-      <For each={events}>
+      <For each={displayedEvents}>
         {(event, index) => (
           <EventCard key={`${event.location}-${index}`} event={event} />
         )}
       </For>
+
+      {/* Toggle button exclusively for mobile when there are extra shows */}
+      {isMobile && hasHiddenEvents && (
+        <Button
+          onClick={() => setIsExpanded(!isExpanded)}
+          variant="outline"
+          bg="accent.cta"
+          color="text.onDark"
+          size="sm"
+          mt={2}
+          width={{ base: "100%", sm: "auto" }}
+        >
+          {isExpanded ? "הצג פחות הופעות" : `הצג הופעות נוספות (${events.length - MOBILE_SHOW_LIMIT})`}
+        </Button>
+      )}
     </VStack>
   )
 }
