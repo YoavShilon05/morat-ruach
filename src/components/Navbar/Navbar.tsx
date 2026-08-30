@@ -22,7 +22,7 @@ export default function Navbar() {
       css={{ backdropFilter: "blur(6px)" }}
     >
       <Flex
-        maxW="7xl"
+        maxW="8xl"
         mx="auto"
         px={{ base: 4, md: 8 }}
         h="80px"

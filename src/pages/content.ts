@@ -16,14 +16,15 @@ export const SOCIAL_LINKS = {
 export const SCHEDULE_LINK = "https://comy.co.il/event/morat/"
 
 export const NAV_LINKS = [
-  { label: "טריילר", href: "#trailer" },
-  { label: "וידאו", href: "#videos" },
+  { label: "טעימה מהמופע", href: "#trailer" },
+  { label: "תגובות הצופים", href: "#comments" },
   { label: "מי אנחנו", href: "#about" },
-  { label: "כתבות", href: "#press" },
+  { label: "הקליפים שלנו", href: "#videos" },
+  { label: "הפודקאסט \"שעת שהייה\"", href: SOCIAL_LINKS.podcast },
+  { label: "\"מורת רוח\" בתקשורת", href: "#press" },
   { label: "לוח הופעות", href: "#schedule" },
   { label: "שאלות ותשובות", href: "#faq" },
   { label: "צרו קשר", href: "#contact" },
-  { label: "פודקאסט", href: SOCIAL_LINKS.podcast },
 ]
 
 export const MEMBERS = [
