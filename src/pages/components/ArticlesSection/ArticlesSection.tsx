@@ -18,7 +18,13 @@ export default function ArticlesSection() {
           <SectionHeading title="מורת רוח בתקשורת" />
         </Reveal>
 
-        <SimpleGrid columns={{ base: 1, md: 2 }} gap={6} width="100%">
+        <SimpleGrid
+          columns={2}
+          gap={{ base: 4, md: 6 }}
+          width="100%"
+          maxW={{ base: "100%", md: "60%" }}
+          mx="auto"
+        >
           <For each={INTERVIEWS}>
             {(video, i) => (
               <Reveal key={video.href} delay={i * 0.1} width="100%">

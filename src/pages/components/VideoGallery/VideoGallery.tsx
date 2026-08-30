@@ -31,7 +31,12 @@ export default function VideoGallery() {
               loop
               allowMouseDrag
             >
-              <Carousel.ItemGroup alignItems="stretch" py={6} px={{ base: 6, md: 4 }}>
+              <Carousel.ItemGroup
+                alignItems="stretch"
+                py={6}
+                px={{ base: 6, md: 4 }}
+                scrollPaddingInline={{ base: 6, md: 4 }}
+              >
                 <For each={CLIPS}>
                   {(video, i) => (
                     <Carousel.Item key={video.href} index={i} display="flex">
