@@ -9,7 +9,7 @@ export default function TrailerSection() {
     <Box as="section" id="trailer" bg="board.800" py={{ base: 16, md: 24 }} px={6}>
       <VStack maxW="4xl" mx="auto" gap={10}>
         <Reveal>
-          <SectionHeading eyebrow="טעימה קטנה" title="הטריילר של המופע" onDark />
+          <SectionHeading title="טעימה מהמופע" onDark />
         </Reveal>
 
         <Reveal delay={0.1} width="100%">
