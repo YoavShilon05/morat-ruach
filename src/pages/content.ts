@@ -10,6 +10,7 @@ export const SOCIAL_LINKS = {
   facebook: "https://www.facebook.com/profile.php?id=100086619635903",
   instagram: "https://www.instagram.com/morat_ruah/",
   podcast: "https://open.spotify.com/show/4o78awCe0On3zQ3hihZhgF",
+  tiktok: "https://www.tiktok.com/@moratruah"
 }
 
 export const SCHEDULE_LINK = "https://comy.co.il/event/morat/"

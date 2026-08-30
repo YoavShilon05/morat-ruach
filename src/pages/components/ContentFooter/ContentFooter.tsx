@@ -3,7 +3,7 @@ import Reveal from "@/components/Reveal/Reveal.tsx";
 import {SOCIAL_LINKS, whatsappLink} from "@/pages/content.ts";
 import WhatsappIcon from "@/assets/icons/whatsapp.svg?react"
 import InstagramIcon from "@/assets/icons/instagram.svg?react";
-import SpotifyIcon from "@/assets/icons/spotify.svg?react";
+import TiktokIcon from "@/assets/icons/tiktok2.svg?react";
 import FacebookIcon from "@/assets/icons/facebook.svg?react";
 
 export default function ContactFooter() {
@@ -45,8 +45,8 @@ export default function ContactFooter() {
               <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noreferrer">
                 <Icon as={InstagramIcon} color="var(--chakra-colors-paper)" boxSize={10} />
               </a>
-              <a href={SOCIAL_LINKS.podcast} target="_blank" rel="noreferrer">
-                <Icon as={SpotifyIcon} color="var(--chakra-colors-paper)" boxSize={10} />
+              <a href={SOCIAL_LINKS.tiktok} target="_blank" rel="noreferrer">
+                <Icon as={TiktokIcon} color="var(--chakra-colors-paper)" boxSize={10} />
               </a>
             </HStack>
           </VStack>
