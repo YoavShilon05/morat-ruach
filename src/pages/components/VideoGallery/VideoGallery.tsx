@@ -1,62 +1,65 @@
-import { useState } from "react"
-import { Box, SimpleGrid, VStack, For, Button } from "@chakra-ui/react"
-import { useBreakpointValue } from "@chakra-ui/react" // Or '@chakra-ui/react' responsive hook depending on version v2/v3
+import { Box, Carousel, For, LocaleProvider, VStack, useBreakpointValue } from "@chakra-ui/react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 import SectionHeading from "@/components/SectionHeading/SectionHeading.tsx"
 import Reveal from "@/components/Reveal/Reveal.tsx"
-import { VIDEOS } from "@/pages/content.ts"
+import { CLIPS } from "@/pages/content.ts"
 import { VideoCard } from "@/pages/components/VideoGallery/VideoCard.tsx"
-import {MOBILE_VIDEO_LIMIT} from "@/constants.ts";
-
 
 export default function VideoGallery() {
-  const [isExpanded, setIsExpanded] = useState(false)
-
-  // Returns true only on the base/mobile breakpoint
-  const isMobile = useBreakpointValue({ base: true, sm: false })
-
-  // Determine which videos to display based on device and toggle state
-  const displayedVideos = isMobile && !isExpanded
-    ? VIDEOS.slice(0, MOBILE_VIDEO_LIMIT)
-    : VIDEOS
-
-  const hasHiddenVideos = VIDEOS.length > MOBILE_VIDEO_LIMIT
+  const slidesPerPage = useBreakpointValue({ base: 2, sm: 3, md: 4 }) ?? 1
 
   return (
-    <Box as="section" id="videos" bg="board.900" py={{ base: 16, md: 24 }} px={6}>
-      <VStack maxW="6xl" mx="auto" gap={12}>
+    <Box as="section" id="videos" bg="board.900" py={{ base: 16, md: 24 }} px={{ base: 0, md: 2 }}>
+      <VStack maxW="8xl" mx="auto" gap={{ base: 8, md: 12 }}>
         <Reveal>
           <SectionHeading
-            title="הקליפים שהפכו לויראליים"
+            title="הקליפים שלנו"
             subtitle="מציאות מורכבת ועגומה, בצורה קלילה ומצחיקה - מנקודת המבט של מורים."
             onDark
           />
         </Reveal>
 
-        <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} gap={6} width="100%">
-          <For each={displayedVideos}>
-            {(video, i) => (
-              <Reveal key={video.href} delay={(i % 3) * 0.08}>
-                <VideoCard index={i + 1} video={video} />
-              </Reveal>
-            )}
-          </For>
-        </SimpleGrid>
-
-        {/* Render button only on mobile when there are more videos available */}
-        {isMobile && hasHiddenVideos && (
-          <Reveal>
-            <Button
-              onClick={() => setIsExpanded(!isExpanded)}
-              variant="outline"
-              bg="accent.cta"
-              color="text.onDark"
-              size="md"
-              mt={4}
+        <Reveal delay={0.1} width="100%">
+          <LocaleProvider locale="he-IL">
+            <Carousel.Root
+              width="100%"
+              slideCount={CLIPS.length}
+              slidesPerPage={slidesPerPage}
+              slidesPerMove={1}
+              spacing="24px"
+              autoplay={{ delay: 3000 }}
+              loop
+              allowMouseDrag
             >
-              {isExpanded ? "הצג פחות" : "הצג עוד קליפים"}
-            </Button>
-          </Reveal>
-        )}
+              <Carousel.ItemGroup
+                alignItems="stretch"
+                py={6}
+                px={{ base: 6, md: 4 }}
+                scrollPaddingInline={{ base: 6, md: 4 }}
+              >
+                <For each={CLIPS}>
+                  {(video, i) => (
+                    <Carousel.Item key={video.href} index={i} display="flex">
+                      <VideoCard index={i + 1} video={video} />
+                    </Carousel.Item>
+                  )}
+                </For>
+              </Carousel.ItemGroup>
+
+              <Carousel.Control justifyContent="center" gap={4}>
+                <Carousel.PrevTrigger aria-label="הקליפ הקודם" color="text.onDark" opacity={0.7} _hover={{ opacity: 1 }}>
+                  <ChevronRight size={22} />
+                </Carousel.PrevTrigger>
+
+                <Carousel.Indicators bg="whiteAlpha.400" _current={{ bg: "text.onDark" }} />
+
+                <Carousel.NextTrigger aria-label="הקליפ הבא" color="text.onDark" opacity={0.7} _hover={{ opacity: 1 }}>
+                  <ChevronLeft size={22} />
+                </Carousel.NextTrigger>
+              </Carousel.Control>
+            </Carousel.Root>
+          </LocaleProvider>
+        </Reveal>
       </VStack>
     </Box>
   )

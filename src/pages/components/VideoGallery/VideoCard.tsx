@@ -18,6 +18,7 @@ export function VideoCard({ video, index }: { video: Video, index: number }) {
       variant="elevated"
       bg="board.700"
       borderColor="whiteAlpha.100"
+      width="100%"
       overflow="hidden"
       transition="all 0.3s ease"
       _hover={!isPlaying ? { transform: "translateY(-6px)", boxShadow: "0 16px 30px rgba(0,0,0,0.35)" } : undefined}
