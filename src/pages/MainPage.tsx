@@ -8,6 +8,7 @@ import VideoGallery from "@/pages/components/VideoGallery/VideoGallery.tsx";
 import AboutUs from "@/pages/components/AboutUs/AboutUs.tsx";
 import ArticlesSection from "@/pages/components/ArticlesSection/ArticlesSection.tsx";
 import ShowSchedule from "@/pages/components/ShowSchedule/ShowSchedule.tsx";
+import PodcastSection from "@/pages/components/PodcastSection/PodcastSection.tsx";
 import {AudienceComments} from "@/pages/components/AudienceComments/AudienceComments.tsx";
 
 export const MainPage = () => {
@@ -22,6 +23,7 @@ export const MainPage = () => {
         <VideoGallery />
         <ArticlesSection />
         <ShowSchedule />
+        <PodcastSection />
         <FAQSection />
         <ContactFooter />
       </Box>

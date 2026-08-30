@@ -61,6 +61,13 @@ export const CLIPS = [
   {href: VIDEOS.lockdown, title: "הסגר הששה-עשר"},
 ]
 
+export const PODCAST_EPISODES = [
+  {href: "https://www.youtube.com/watch?v=D7VWuykV0WI", title: "פרק 1 - כשאנחנו היינו בגילכם"},
+  {href: "https://www.youtube.com/watch?v=RhaC7r3qxPc", title: "פרק 2 - טראומות"},
+  {href: "https://www.youtube.com/watch?v=CzCuc7AgIIo", title: "פרק 3 - הכלה או השפלה?"},
+  {href: "https://www.youtube.com/watch?v=9ETOZcnUKgE", title: "פרק 4 - קנאה של מורים בתלמידים"},
+]
+
 export const PRESS_MENTIONS = [
   { outlet: "כאן חדשות", href: "https://www.kan.org.il/content/kan-news/local/249419/" },
   { outlet: "Ynet", href: "https://www.ynet.co.il/news/article/s1qhgy27o" },
