@@ -9,6 +9,7 @@ import VideoGallery from "@/pages/components/VideoGallery/VideoGallery.tsx";
 import AboutUs from "@/pages/components/AboutUs/AboutUs.tsx";
 import ArticlesSection from "@/pages/components/ArticlesSection/ArticlesSection.tsx";
 import ShowSchedule from "@/pages/components/ShowSchedule/ShowSchedule.tsx";
+import PodcastSection from "@/pages/components/PodcastSection/PodcastSection.tsx";
 
 export const MainPage = () => {
   return (
@@ -22,6 +23,7 @@ export const MainPage = () => {
         <AboutUs />
         <ArticlesSection />
         <ShowSchedule />
+        <PodcastSection />
         <FAQSection />
         <ContactFooter />
       </Box>

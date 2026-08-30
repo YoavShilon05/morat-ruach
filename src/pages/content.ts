@@ -73,6 +73,13 @@ export const ABOUT_PARAGRAPHS = [
   `בקיץ 2022 התחלנו לכתוב יחד את 'מורת רוח – המופע', תוכנית סאטירית-מוזיקלית באורך מלא. אחרי אין סוף שעות שבמהלכן כתבנו, מחקנו, דייקנו, התרגשנו ובעיקר צחקנו – עלינו למופע הבכורה בתיאטרון 'תמונע' במרץ 2023. המופע זכה להצלחה עצומה ולפרגון מצד [התקשורת](#press). חלפו למעלה משלוש שנים. מאז הופענו מעל 150 הופעות בכל רחבי הארץ מול עשרות אלפי אנשים. התגובה שאנחנו מקבלים הכי הרבה פעמים היא – "זה מופע שמתאים לכולם. לא רק למורים", ואנחנו מסכימים, כי בתכל'ס, אין אחד שלא קשור בדרך כזו או אחרת למערכת החינוך – כמורה, כהורה, כתלמיד או כבוגר.`,
 ]
 
+export const PODCAST_EPISODES = [
+  {href: "https://www.youtube.com/watch?v=D7VWuykV0WI", title: "פרק 1 - כשאנחנו היינו בגילכם"},
+  {href: "https://www.youtube.com/watch?v=RhaC7r3qxPc", title: "פרק 2 - טראומות"},
+  {href: "https://www.youtube.com/watch?v=CzCuc7AgIIo", title: "פרק 3 - הכלה או השפלה?"},
+  {href: "https://www.youtube.com/watch?v=9ETOZcnUKgE", title: "פרק 4 - קנאה של מורים בתלמידים"},
+]
+
 export const PRESS_MENTIONS = [
   { outlet: "כאן חדשות", href: "https://www.kan.org.il/content/kan-news/local/249419/" },
   { outlet: "Ynet", href: "https://www.ynet.co.il/news/article/s1qhgy27o" },
