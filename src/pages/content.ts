@@ -27,33 +27,36 @@ export const NAV_LINKS = [
   { label: "צרו קשר", href: "#contact" },
 ]
 
-export const ABOUT_TEXT = `שלישיית 'מורת רוח' נולדה בשנת 2017 בחדר המורים של תיכון 'כצנלסון' בכפר סבא. לכבוד אירוע סוף שנה חגיגי במיוחד הוועד ביקש תוכנית אומנותית, וחברנו יחד.
-
-שלוש שנים לאחר מכן פרצה הקורונה ואנחנו הוצאנו את התסכול שלנו בקליפ געגועים לבית הספר, שהפך מהר מאוד לוויראלי. מאז הוצאנו עוד קליפים רבים, אשר מציגים בצורה קלילה ומצחיקה מציאות מורכבת ועגומה, והכול מנקודת מבטם של מורים.
-
-בין הנושאים: המחסור הכבד במורים, הכלת־היתר שמורים נאלצים לנקוט בלית ברירה, הבירוקרטיה האין־סופית מול משרד החינוך, אוזלת היד מול אלימות של תלמידים, השביתות והשלכותיהן, הרפורמות התכופות, למידה מרחוק בקורונה, התופעה המטרידה המכונה 'קליפ מחנכים' וכן שיר הצדעה לבוגרינו האהובים, שלחמו ב'חרבות ברזל', וחלקם לא שבו.
-
-הקליפים זכו לתהודה רבה בקרב הקהל והתקשורת, מה שהוביל אותנו לחשוב שאולי יהיה נחמד אם נעלה גם מופע סאטירי-מוזיקלי. בחופש הגדול של 2022 ישבנו בחדר המורים הריק, שתינו קפה נמס וכתבנו את המופע. קיווינו שיהיו כמה מורים וקרובי משפחה שימצאו בו עניין.
-
-חלפו למעלה משלוש שנים. מאז הופענו מעל 150 הופעות ברחבי הארץ מול עשרות אלפי אנשים. התגובה שאנחנו מקבלים הכי הרבה פעמים היא – "זה מופע לכולם. לא רק למורים". כי בתכל'ס, אין אחד שלא קשור בדרך זו או אחרת למערכת החינוך – כמורה, כהורה או כתלמיד (גם אם סיים ללמוד לפני 30 שנה).`
-
 export const MEMBERS = [
   { name: "ברק גונן", role: "מורה לתיאטרון" },
   { name: "דורון בן עמי", role: "מורה להיסטוריה, מוזיקה ומזרחנות" },
   { name: "מיה שילון", role: "מורה ללשון" },
 ]
 
-// Real links kept for future wiring, but rendered as placeholder tiles for now.
+export const CLIPS = {
+  longing:        "https://www.youtube.com/watch?v=uRNIZ_OTRZU", // קליפ הגעגועים
+  shortage:       "https://www.youtube.com/watch?v=NfV6kPLN0vU", // המחסור במורים
+  overInclusion:  "https://www.youtube.com/watch?v=P2vtrqhLT1Y", // הכלת-יתר
+  pay:            "https://www.youtube.com/watch?v=-LRYc33D8fw", // הפגיעה בשכר
+  violence:       "https://www.youtube.com/watch?v=ELWGX_kUaRc", // אלימות בבתי הספר
+  strikes:        "https://www.youtube.com/watch?v=LmSEaLqFQRo", // השביתות
+  reforms:        "https://www.youtube.com/watch?v=lrYy58DmzKk", // הרפורמות
+  remoteLearning: "https://www.youtube.com/watch?v=oDaSSK9zvO4", // קשיי הלמידה מרחוק
+  homeroom:       "https://www.youtube.com/watch?v=6UEq-JLmz4o", // קליפ המחנכים
+  october:        "https://www.youtube.com/watch?v=d7xSa25kJE4", // קליפ ההצדעה לבוגרים
+  interview:      "https://www.youtube.com/watch?v=aGKoF4UQ9KI", // ריאיון
+} as const
+
 export const VIDEOS = [
-  {href: "https://www.youtube.com/watch?v=uRNIZ_OTRZU", title: "אולי בקיץ ניפגש"},
-  {href: "https://www.youtube.com/watch?v=NfV6kPLN0vU", title: "הם ייקחו אותך"},
-  {href: "https://www.youtube.com/watch?v=P2vtrqhLT1Y", title: "שפת הפוליטיקלי קורקט"},
-  {href: "https://www.youtube.com/watch?v=lrYy58DmzKk", title: "שוב ממציאים לנו רפור"},
-  {href: "https://www.youtube.com/watch?v=ELWGX_kUaRc", title: "מסדרון המזכירות"},
-  {href: "https://www.youtube.com/watch?v=-LRYc33D8fw", title: "בלדה על שש שנים של ותק שעוד לא הוכר"},
-  {href: "https://www.youtube.com/watch?v=d7xSa25kJE4", title: "המורים של חיילי אוקטובר עשרים ושלוש"},
-  {href: "https://www.youtube.com/watch?v=LmSEaLqFQRo", title: "עוד שביתה"},
-  {href: "https://www.youtube.com/watch?v=aGKoF4UQ9KI", title: "שלושה מורים עלו על הבמה עם אמת כואבת - ועשו מזה סאטירה"},
+  {href: CLIPS.longing, title: "אולי בקיץ ניפגש"},
+  {href: CLIPS.shortage, title: "הם ייקחו אותך"},
+  {href: CLIPS.overInclusion, title: "שפת הפוליטיקלי קורקט"},
+  {href: CLIPS.reforms, title: "שוב ממציאים לנו רפור"},
+  {href: CLIPS.violence, title: "מסדרון המזכירות"},
+  {href: CLIPS.pay, title: "בלדה על שש שנים של ותק שעוד לא הוכר"},
+  {href: CLIPS.october, title: "המורים של חיילי אוקטובר עשרים ושלוש"},
+  {href: CLIPS.strikes, title: "עוד שביתה"},
+  {href: CLIPS.interview, title: "שלושה מורים עלו על הבמה עם אמת כואבת - ועשו מזה סאטירה"},
 ]
 
 export const PRESS_MENTIONS = [

@@ -3,21 +3,20 @@ import { Box, VStack, SimpleGrid, Card, Avatar, For, Text, Button } from "@chakr
 import { useBreakpointValue } from "@chakra-ui/react"
 import Reveal from "@/components/Reveal/Reveal.tsx"
 import SectionHeading from "@/components/SectionHeading/SectionHeading.tsx"
-import { ABOUT_TEXT, MEMBERS } from "@/pages/content.ts"
+import { MEMBERS } from "@/pages/content.ts"
+import { ABOUT_PARAGRAPHS } from "@/pages/components/AboutUs/aboutParagraphs.tsx"
 
 const MOBILE_PARAGRAPH_LIMIT = 2
 
 export default function AboutUs() {
-  const paragraphs = ABOUT_TEXT.split("\n\n")
   const [isExpanded, setIsExpanded] = useState(false)
   const isMobile = useBreakpointValue({ base: true, sm: false })
 
-  // Slice paragraphs if on mobile and not expanded
   const displayedParagraphs = isMobile && !isExpanded
-    ? paragraphs.slice(0, MOBILE_PARAGRAPH_LIMIT)
-    : paragraphs
+    ? ABOUT_PARAGRAPHS.slice(0, MOBILE_PARAGRAPH_LIMIT)
+    : ABOUT_PARAGRAPHS
 
-  const hasHiddenParagraphs = paragraphs.length > MOBILE_PARAGRAPH_LIMIT
+  const hasHiddenParagraphs = ABOUT_PARAGRAPHS.length > MOBILE_PARAGRAPH_LIMIT
 
   return (
     <Box as="section" id="about" bg="bg.surface" py={{ base: 16, md: 24 }} px={6}>
@@ -26,21 +25,18 @@ export default function AboutUs() {
           <SectionHeading eyebrow="מי אנחנו" title="שלושה מורים, במה אחת" />
         </Reveal>
 
-        {/* Global typography overrides passed directly to the container */}
         <VStack gap={4} align="start" fontFamily="body" color="text.onLight" lineHeight="1.9" fontSize="md">
-          <For each={displayedParagraphs}>
-            {(p, i) => (
-              <Reveal key={i} delay={i * 0.05}>
-                <Text>{p}</Text>
-              </Reveal>
-            )}
-          </For>
+          {displayedParagraphs.map((p, i) => (
+            <Reveal key={i} delay={i * 0.05}>
+              <Text>{p}</Text>
+            </Reveal>
+          ))}
 
           {isMobile && hasHiddenParagraphs && !isExpanded && (
             <Button
               onClick={() => setIsExpanded(!isExpanded)}
               variant="ghost"
-              colorPalette="orange" // Matches the profile theme palette
+              colorPalette="orange"
               size="sm"
               mt={2}
               alignSelf="center"

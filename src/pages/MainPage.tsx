@@ -18,8 +18,8 @@ export const MainPage = () => {
         <Hero />
         <TrailerSection />
         <AudienceComments />
-        <VideoGallery />
         <AboutUs />
+        <VideoGallery />
         <ArticlesSection />
         <ShowSchedule />
         <FAQSection />
