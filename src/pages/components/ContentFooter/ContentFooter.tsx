@@ -12,10 +12,10 @@ export default function ContactFooter() {
       <Reveal>
         <VStack maxW="2xl" mx="auto" gap={6} textAlign="center">
           <Text fontFamily="heading" fontSize={{ base: "2xl", md: "3xl" }} fontWeight="700" color="text.onDark">
-            צרו קשר ומלאו נוכחות
+            צרו קשר
           </Text>
           <Text fontFamily="body" color="text.onDark" opacity={0.8}>
-            לקבלת פרטים והצעת מחיר על הזמנת המופע לאירוע פרטי, השאירו הודעה ← וטליה המפיקה שלנו תחזור אליכם.
+            להזמנת הופעות וקבלת פרטים, שלחו הודעה, ונחזור אליכם.
           </Text>
           <Button
             asChild
@@ -36,7 +36,7 @@ export default function ContactFooter() {
 
           <VStack gap={3}>
             <Text fontFamily="body" fontSize="sm" color="text.onDark" opacity={0.6}>
-              לעדכונים על הופעות וקליפים חדשים, עקבו אחרינו
+              לעוד מאיתנו, עקבו אחרינו
             </Text>
             <HStack gap={4}>
               <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noreferrer">
