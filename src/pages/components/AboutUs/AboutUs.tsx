@@ -1,46 +1,42 @@
 import { useState } from "react"
-import { Box, VStack, SimpleGrid, Card, Avatar, For, Text, Button } from "@chakra-ui/react"
+import { Box, VStack, SimpleGrid, Card, Avatar, For, Button } from "@chakra-ui/react"
 import { useBreakpointValue } from "@chakra-ui/react"
 import Reveal from "@/components/Reveal/Reveal.tsx"
 import SectionHeading from "@/components/SectionHeading/SectionHeading.tsx"
-import { ABOUT_TEXT, MEMBERS } from "@/pages/content.ts"
+import RichText from "@/components/RichText/RichText.tsx"
+import { ABOUT_PARAGRAPHS, MEMBERS } from "@/pages/content.ts"
 
 const MOBILE_PARAGRAPH_LIMIT = 2
 
 export default function AboutUs() {
-  const paragraphs = ABOUT_TEXT.split("\n\n")
   const [isExpanded, setIsExpanded] = useState(false)
   const isMobile = useBreakpointValue({ base: true, sm: false })
 
-  // Slice paragraphs if on mobile and not expanded
   const displayedParagraphs = isMobile && !isExpanded
-    ? paragraphs.slice(0, MOBILE_PARAGRAPH_LIMIT)
-    : paragraphs
+    ? ABOUT_PARAGRAPHS.slice(0, MOBILE_PARAGRAPH_LIMIT)
+    : ABOUT_PARAGRAPHS
 
-  const hasHiddenParagraphs = paragraphs.length > MOBILE_PARAGRAPH_LIMIT
+  const hasHiddenParagraphs = ABOUT_PARAGRAPHS.length > MOBILE_PARAGRAPH_LIMIT
 
   return (
     <Box as="section" id="about" bg="bg.surface" py={{ base: 16, md: 24 }} px={6}>
       <VStack maxW="4xl" mx="auto" gap={10}>
         <Reveal>
-          <SectionHeading eyebrow="מי אנחנו" title="שלושה מורים, במה אחת" />
+          <SectionHeading title="מי אנחנו?" />
         </Reveal>
 
-        {/* Global typography overrides passed directly to the container */}
         <VStack gap={4} align="start" fontFamily="body" color="text.onLight" lineHeight="1.9" fontSize="md">
-          <For each={displayedParagraphs}>
-            {(p, i) => (
-              <Reveal key={i} delay={i * 0.05}>
-                <Text>{p}</Text>
-              </Reveal>
-            )}
-          </For>
+          {displayedParagraphs.map((p, i) => (
+            <Reveal key={i} delay={i * 0.05}>
+              <RichText>{p}</RichText>
+            </Reveal>
+          ))}
 
           {isMobile && hasHiddenParagraphs && !isExpanded && (
             <Button
               onClick={() => setIsExpanded(!isExpanded)}
               variant="ghost"
-              colorPalette="orange" // Matches the profile theme palette
+              colorPalette="orange"
               size="sm"
               mt={2}
               alignSelf="center"

@@ -1,6 +1,7 @@
 import { Box, VStack, Accordion, For } from "@chakra-ui/react"
 import SectionHeading from "@/components/SectionHeading/SectionHeading.tsx"
 import Reveal from "@/components/Reveal/Reveal.tsx"
+import RichText from "@/components/RichText/RichText.tsx"
 import { FAQ_ITEMS } from "@/pages/content.ts"
 
 export default function FAQSection() {
@@ -8,7 +9,7 @@ export default function FAQSection() {
     <Box as="section" id="faq" bg="bg.surface" py={{ base: 16, md: 24 }} px={6}>
       <VStack maxW="3xl" mx="auto" gap={10}>
         <Reveal>
-          <SectionHeading eyebrow="שאלות ותשובות" title="שאלות שאתם בטח שואלים" />
+          <SectionHeading title="שאלות ותשובות" />
         </Reveal>
 
         <Accordion.Root dir="rtl" variant="enclosed" multiple width="100%" as={VStack} gap={3} border="none">
@@ -37,7 +38,7 @@ export default function FAQSection() {
                       opacity={0.8}
                       lineHeight="1.8"
                     >
-                      {item.a}
+                      <RichText>{item.a}</RichText>
                     </Accordion.ItemBody>
                   </Accordion.ItemContent>
                 </Accordion.Item>

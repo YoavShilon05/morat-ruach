@@ -3,7 +3,7 @@ import { useState } from "react"
 import {Menu, X} from "lucide-react"
 import {NAV_LINKS, SOCIAL_LINKS} from "@/pages/content.ts";
 import InstagramIcon from "@/assets/icons/instagram.svg?react";
-import SpotifyIcon from "@/assets/icons/spotify.svg?react";
+import TiktokIcon from "@/assets/icons/tiktok2.svg?react";
 import FacebookIcon from "@/assets/icons/facebook.svg?react";
 import Logo from "@/assets/logos/logo.png"
 
@@ -22,7 +22,7 @@ export default function Navbar() {
       css={{ backdropFilter: "blur(6px)" }}
     >
       <Flex
-        maxW="7xl"
+        maxW="8xl"
         mx="auto"
         px={{ base: 4, md: 8 }}
         h="80px"
@@ -111,8 +111,8 @@ function SocialIcons() {
       <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noreferrer">
         <Icon as={InstagramIcon} boxSize={7} />
       </a>
-      <a href={SOCIAL_LINKS.podcast} target="_blank" rel="noreferrer">
-        <Icon as={SpotifyIcon} boxSize={7} />
+      <a href={SOCIAL_LINKS.tiktok} target="_blank" rel="noreferrer">
+        <Icon as={TiktokIcon} boxSize={7} />
       </a>
     </HStack>
   )
