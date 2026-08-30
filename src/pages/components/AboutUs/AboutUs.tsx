@@ -22,7 +22,7 @@ export default function AboutUs() {
     <Box as="section" id="about" bg="bg.surface" py={{ base: 16, md: 24 }} px={6}>
       <VStack maxW="4xl" mx="auto" gap={10}>
         <Reveal>
-          <SectionHeading eyebrow="מי אנחנו" title="שלושה מורים, במה אחת" />
+          <SectionHeading title="מי אנחנו?" />
         </Reveal>
 
         <VStack gap={4} align="start" fontFamily="body" color="text.onLight" lineHeight="1.9" fontSize="md">

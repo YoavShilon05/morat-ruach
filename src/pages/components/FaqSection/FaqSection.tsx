@@ -9,7 +9,7 @@ export default function FAQSection() {
     <Box as="section" id="faq" bg="bg.surface" py={{ base: 16, md: 24 }} px={6}>
       <VStack maxW="3xl" mx="auto" gap={10}>
         <Reveal>
-          <SectionHeading eyebrow="שאלות ותשובות" title="שאלות שאתם בטח שואלים" />
+          <SectionHeading title="שאלות ותשובות" />
         </Reveal>
 
         <Accordion.Root dir="rtl" variant="enclosed" multiple width="100%" as={VStack} gap={3} border="none">

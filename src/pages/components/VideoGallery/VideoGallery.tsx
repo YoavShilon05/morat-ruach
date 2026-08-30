@@ -13,7 +13,7 @@ export default function VideoGallery() {
       <VStack maxW="8xl" mx="auto" gap={{ base: 8, md: 12 }}>
         <Reveal>
           <SectionHeading
-            title="הקליפים שהפכו לויראליים"
+            title="הקליפים שלנו"
             subtitle="מציאות מורכבת ועגומה, בצורה קלילה ומצחיקה - מנקודת המבט של מורים."
             onDark
           />

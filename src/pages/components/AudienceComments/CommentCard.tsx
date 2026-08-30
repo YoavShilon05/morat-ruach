@@ -7,7 +7,8 @@ export function CommentCard({ comment }: { comment: string }) {
       variant="elevated"
       bg="paper"
       borderRadius="xl"
-      height={{ base: "300px", md: "200px" }}
+      height={{ base: "300px", md: "330px" }}
+      m={{ base: 10, md: 0 }}
       width="100%"
       boxShadow="0 12px 30px rgba(11,33,29,0.18)"
     >
@@ -15,7 +16,7 @@ export function CommentCard({ comment }: { comment: string }) {
         <Icon as={Quote} boxSize={7} color="accent.emphasis" transform="scaleX(-1)" />
         
         <VStack align="start" justify="center" gap={4} height="100%">
-          <Text fontFamily="body" color="text.onLight" fontSize={{ base: "md", md: "lg" }} lineHeight="1.6">
+          <Text fontFamily="body" color="text.onLight" fontSize={{ base: "sm", md: "md" }} lineHeight="1.6">
             {comment}
           </Text>
         </VStack>
