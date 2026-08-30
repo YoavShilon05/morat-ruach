@@ -4,7 +4,6 @@ import FAQSection from "@/pages/components/FaqSection/FaqSection.tsx";
 import Navbar from "@/components/Navbar/Navbar.tsx";
 import Hero from "@/pages/components/Hero/Hero.tsx";
 import TrailerSection from "@/pages/components/TrailerSection/TrailerSection.tsx";
-import InviteCTA from "@/pages/components/InviteCTA/InviteCTA.tsx";
 import VideoGallery from "@/pages/components/VideoGallery/VideoGallery.tsx";
 import AboutUs from "@/pages/components/AboutUs/AboutUs.tsx";
 import ArticlesSection from "@/pages/components/ArticlesSection/ArticlesSection.tsx";
@@ -20,9 +19,8 @@ export const MainPage = () => {
         <Hero />
         <TrailerSection />
         <AudienceComments />
-        <InviteCTA />
-        <VideoGallery />
         <AboutUs />
+        <VideoGallery />
         <ArticlesSection />
         <ShowSchedule />
         <PodcastSection />
