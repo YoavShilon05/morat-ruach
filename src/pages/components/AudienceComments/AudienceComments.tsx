@@ -26,7 +26,7 @@ export const AudienceComments = () => {
               slidesPerPage={slidesPerPage}
               slidesPerMove={1}
               spacing="24px"
-              autoplay={{ delay: 4000 }}
+              autoplay={{ delay: 3000 }}
               loop
               allowMouseDrag
             >
