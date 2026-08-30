@@ -17,7 +17,7 @@ export const SCHEDULE_LINK = "https://comy.co.il/event/morat/"
 
 export const NAV_LINKS = [
   { label: "טעימה מהמופע", href: "#trailer" },
-  { label: "תגובות הצופים", href: "#comments" }, //todo: add comments section
+  { label: "תגובות הצופים", href: "#comments" },
   { label: "מי אנחנו", href: "#about" },
   { label: "הקליפים שלנו", href: "#videos" },
   { label: "הפודקאסט \"שעת שהייה\"", href: SOCIAL_LINKS.podcast },

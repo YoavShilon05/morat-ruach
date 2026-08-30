@@ -17,7 +17,6 @@ export const MainPage = () => {
         <Navbar />
         <Hero />
         <TrailerSection />
-        {/*<InviteCTA />*/}
         <AudienceComments />
         <VideoGallery />
         <AboutUs />
