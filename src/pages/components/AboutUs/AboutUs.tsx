@@ -1,10 +1,10 @@
 import { useState } from "react"
-import { Box, VStack, SimpleGrid, Card, Avatar, For, Text, Button } from "@chakra-ui/react"
+import { Box, VStack, SimpleGrid, Card, Avatar, For, Button } from "@chakra-ui/react"
 import { useBreakpointValue } from "@chakra-ui/react"
 import Reveal from "@/components/Reveal/Reveal.tsx"
 import SectionHeading from "@/components/SectionHeading/SectionHeading.tsx"
-import { MEMBERS } from "@/pages/content.ts"
-import { ABOUT_PARAGRAPHS } from "@/pages/components/AboutUs/aboutParagraphs.tsx"
+import RichText from "@/components/RichText/RichText.tsx"
+import { ABOUT_PARAGRAPHS, MEMBERS } from "@/pages/content.ts"
 
 const MOBILE_PARAGRAPH_LIMIT = 2
 
@@ -28,7 +28,7 @@ export default function AboutUs() {
         <VStack gap={4} align="start" fontFamily="body" color="text.onLight" lineHeight="1.9" fontSize="md">
           {displayedParagraphs.map((p, i) => (
             <Reveal key={i} delay={i * 0.05}>
-              <Text>{p}</Text>
+              <RichText>{p}</RichText>
             </Reveal>
           ))}
 

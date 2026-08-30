@@ -1,6 +1,7 @@
 import { Box, VStack, Accordion, For } from "@chakra-ui/react"
 import SectionHeading from "@/components/SectionHeading/SectionHeading.tsx"
 import Reveal from "@/components/Reveal/Reveal.tsx"
+import RichText from "@/components/RichText/RichText.tsx"
 import { FAQ_ITEMS } from "@/pages/content.ts"
 
 export default function FAQSection() {
@@ -37,7 +38,7 @@ export default function FAQSection() {
                       opacity={0.8}
                       lineHeight="1.8"
                     >
-                      {item.a}
+                      <RichText>{item.a}</RichText>
                     </Accordion.ItemBody>
                   </Accordion.ItemContent>
                 </Accordion.Item>
