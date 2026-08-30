@@ -14,7 +14,7 @@ export default function ShowSchedule() {
     <Box as="section" id="schedule" bg="board.800" py={{ base: 16, md: 24 }} px={6}>
       <Reveal>
         <VStack maxW="3xl" mx="auto" gap={6} textAlign="center">
-          <SectionHeading eyebrow="הופעות פתוחות" title="לוח ההופעות" onDark />
+          <SectionHeading title="לוח ההופעות שלנו" onDark />
           <Text fontFamily="body" color="text.onDark" opacity={0.85}>
             רוצים לבוא להתרשם בעצמכם לפני שמזמינים? הצטרפו לאחת ההופעות הפתוחות שלנו.
           </Text>

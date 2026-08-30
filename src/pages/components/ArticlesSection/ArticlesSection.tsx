@@ -1,8 +1,14 @@
 import { Box, SimpleGrid, Text, VStack, Card, For, Link } from "@chakra-ui/react"
 import { Newspaper } from "lucide-react"
-import { PRESS_MENTIONS } from "@/pages/content.ts"
+import { PRESS_MENTIONS, VIDEOS } from "@/pages/content.ts"
 import Reveal from "@/components/Reveal/Reveal.tsx"
 import SectionHeading from "@/components/SectionHeading/SectionHeading.tsx"
+import { VideoCard } from "@/pages/components/VideoGallery/VideoCard.tsx"
+
+const INTERVIEWS = [
+  { href: VIDEOS.interview2, title: "מהדורת חדשות 'כאן' - כתבה על הקליפ בנושא האלימות" },
+  { href: VIDEOS.interview, title: "מהדורת חדשות 'כאן' - כתבה על המופע" },
+]
 
 export default function ArticlesSection() {
   return (
@@ -11,6 +17,16 @@ export default function ArticlesSection() {
         <Reveal>
           <SectionHeading title="מורת רוח בתקשורת" />
         </Reveal>
+
+        <SimpleGrid columns={{ base: 1, md: 2 }} gap={6} width="100%">
+          <For each={INTERVIEWS}>
+            {(video, i) => (
+              <Reveal key={video.href} delay={i * 0.1} width="100%">
+                <VideoCard index={i + 1} video={video} />
+              </Reveal>
+            )}
+          </For>
+        </SimpleGrid>
 
         <SimpleGrid columns={{ base: 2, md: 4 }} gap={4} width="100%">
           <For each={PRESS_MENTIONS}>
