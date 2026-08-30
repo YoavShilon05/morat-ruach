@@ -2,7 +2,7 @@ import { Box, Carousel, For, LocaleProvider, VStack, useBreakpointValue } from "
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import SectionHeading from "@/components/SectionHeading/SectionHeading.tsx"
 import Reveal from "@/components/Reveal/Reveal.tsx"
-import { VIDEOS } from "@/pages/content.ts"
+import { CLIPS } from "@/pages/content.ts"
 import { VideoCard } from "@/pages/components/VideoGallery/VideoCard.tsx"
 
 export default function VideoGallery() {
@@ -23,7 +23,7 @@ export default function VideoGallery() {
           <LocaleProvider locale="he-IL">
             <Carousel.Root
               width="100%"
-              slideCount={VIDEOS.length}
+              slideCount={CLIPS.length}
               slidesPerPage={slidesPerPage}
               slidesPerMove={1}
               spacing="24px"
@@ -32,7 +32,7 @@ export default function VideoGallery() {
               allowMouseDrag
             >
               <Carousel.ItemGroup alignItems="stretch" py={6} px={{ base: 6, md: 4 }}>
-                <For each={VIDEOS}>
+                <For each={CLIPS}>
                   {(video, i) => (
                     <Carousel.Item key={video.href} index={i} display="flex">
                       <VideoCard index={i + 1} video={video} />

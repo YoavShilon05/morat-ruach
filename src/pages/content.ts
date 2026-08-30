@@ -33,30 +33,32 @@ export const MEMBERS = [
   { name: "מיה שילון", role: "מורה ללשון" },
 ]
 
-export const CLIPS = {
-  longing:        "https://www.youtube.com/watch?v=uRNIZ_OTRZU", // קליפ הגעגועים
-  shortage:       "https://www.youtube.com/watch?v=NfV6kPLN0vU", // המחסור במורים
-  overInclusion:  "https://www.youtube.com/watch?v=P2vtrqhLT1Y", // הכלת-יתר
-  pay:            "https://www.youtube.com/watch?v=-LRYc33D8fw", // הפגיעה בשכר
-  violence:       "https://www.youtube.com/watch?v=ELWGX_kUaRc", // אלימות בבתי הספר
-  strikes:        "https://www.youtube.com/watch?v=LmSEaLqFQRo", // השביתות
-  reforms:        "https://www.youtube.com/watch?v=lrYy58DmzKk", // הרפורמות
+export const VIDEOS = {
+  longing: "https://www.youtube.com/watch?v=uRNIZ_OTRZU", // קליפ הגעגועים
+  shortage: "https://www.youtube.com/watch?v=NfV6kPLN0vU", // המחסור במורים
+  overInclusion: "https://www.youtube.com/watch?v=P2vtrqhLT1Y", // הכלת-יתר
+  pay: "https://www.youtube.com/watch?v=-LRYc33D8fw", // הפגיעה בשכר
+  violence: "https://www.youtube.com/watch?v=ELWGX_kUaRc", // אלימות בבתי הספר
+  strikes: "https://www.youtube.com/watch?v=LmSEaLqFQRo", // השביתות
+  reforms: "https://www.youtube.com/watch?v=lrYy58DmzKk", // הרפורמות
   remoteLearning: "https://www.youtube.com/watch?v=oDaSSK9zvO4", // קשיי הלמידה מרחוק
-  homeroom:       "https://www.youtube.com/watch?v=6UEq-JLmz4o", // קליפ המחנכים
-  october:        "https://www.youtube.com/watch?v=d7xSa25kJE4", // קליפ ההצדעה לבוגרים
-  interview:      "https://www.youtube.com/watch?v=aGKoF4UQ9KI", // ריאיון
+  homeroom: "https://www.youtube.com/watch?v=6UEq-JLmz4o", // קליפ המחנכים
+  october: "https://www.youtube.com/watch?v=d7xSa25kJE4", // קליפ ההצדעה לבוגרים
+  lockdown: "https://www.youtube.com/watch?v=oDaSSK9zvO4",  //הסגר
+  interview: "https://www.youtube.com/watch?v=aGKoF4UQ9KI", // ריאיון
+  interview2: "https://www.youtube.com/watch?v=kX9auwKCu70" //ריאיון 2
 } as const
 
-export const VIDEOS = [
-  {href: CLIPS.longing, title: "אולי בקיץ ניפגש"},
-  {href: CLIPS.shortage, title: "הם ייקחו אותך"},
-  {href: CLIPS.overInclusion, title: "שפת הפוליטיקלי קורקט"},
-  {href: CLIPS.reforms, title: "שוב ממציאים לנו רפור"},
-  {href: CLIPS.violence, title: "מסדרון המזכירות"},
-  {href: CLIPS.pay, title: "בלדה על שש שנים של ותק שעוד לא הוכר"},
-  {href: CLIPS.october, title: "המורים של חיילי אוקטובר עשרים ושלוש"},
-  {href: CLIPS.strikes, title: "עוד שביתה"},
-  {href: CLIPS.interview, title: "שלושה מורים עלו על הבמה עם אמת כואבת - ועשו מזה סאטירה"},
+export const CLIPS = [
+  {href: VIDEOS.longing, title: "אולי בקיץ ניפגש"},
+  {href: VIDEOS.shortage, title: "הם ייקחו אותך"},
+  {href: VIDEOS.overInclusion, title: "שפת הפוליטיקלי קורקט"},
+  {href: VIDEOS.reforms, title: "שוב ממציאים לנו רפורמה"},
+  {href: VIDEOS.violence, title: "מסדרון המזכירות"},
+  {href: VIDEOS.pay, title: "בלדה על שש שנים של ותק שעוד לא הוכר"},
+  {href: VIDEOS.october, title: "המורים של חיילי אוקטובר עשרים ושלוש"},
+  {href: VIDEOS.strikes, title: "עוד שביתה"},
+  {href: VIDEOS.lockdown, title: "הסגר הששה-עשר"},
 ]
 
 export const PRESS_MENTIONS = [

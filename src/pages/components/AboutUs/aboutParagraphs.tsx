@@ -1,6 +1,6 @@
 import type { ReactNode } from "react"
 import { Link } from "@chakra-ui/react"
-import { CLIPS } from "@/pages/content.ts"
+import { VIDEOS } from "@/pages/content.ts"
 
 function InlineLink({ href, children }: { href: string; children: ReactNode }) {
   const isSection = href.startsWith("#")
@@ -27,11 +27,11 @@ export const ABOUT_PARAGRAPHS: ReactNode[] = [
   </>,
 
   <>
-    שלוש שנים לאחר מכן פרצה הקורונה ואנחנו הוצאנו את התסכול שלנו ב<InlineLink href={CLIPS.longing}>קליפ געגועים לבית הספר</InlineLink>, שהפך מהר מאוד לוויראלי. מאז הוצאנו עוד קליפים רבים, אשר מציגים בצורה קלילה ומצחיקה מציאות מורכבת ועגומה, והכול מנקודת מבטם של מורים.
+    שלוש שנים לאחר מכן פרצה הקורונה ואנחנו הוצאנו את התסכול שלנו ב<InlineLink href={VIDEOS.longing}>קליפ געגועים לבית הספר</InlineLink>, שהפך מהר מאוד לוויראלי. מאז הוצאנו עוד קליפים רבים, אשר מציגים בצורה קלילה ומצחיקה מציאות מורכבת ועגומה, והכול מנקודת מבטם של מורים.
   </>,
 
   <>
-    הנושאים שעסקנו בהם היו בין היתר: <InlineLink href={CLIPS.shortage}>המחסור הכבד במורים</InlineLink>, <InlineLink href={CLIPS.overInclusion}>הכלת-יתר</InlineLink>, <InlineLink href={CLIPS.pay}>הפגיעה בשכר המורים</InlineLink>, <InlineLink href={CLIPS.violence}>האלימות בבתי הספר</InlineLink>, <InlineLink href={CLIPS.strikes}>השביתות</InlineLink>, <InlineLink href={CLIPS.reforms}>הרפורמות התכופות</InlineLink>, <InlineLink href={CLIPS.remoteLearning}>קשיי הלמידה מרחוק</InlineLink>, תופעת '<InlineLink href={CLIPS.homeroom}>קליפ המחנכים</InlineLink>', ועוד. קצת לאחר 7.10 הפקנו <InlineLink href={CLIPS.october}>קליפ הצדעה</InlineLink> לבוגרינו האהובים, שלחמו ב'חרבות ברזל', וחלקם לא שבו.
+    הנושאים שעסקנו בהם היו בין היתר: <InlineLink href={VIDEOS.shortage}>המחסור הכבד במורים</InlineLink>, <InlineLink href={VIDEOS.overInclusion}>הכלת-יתר</InlineLink>, <InlineLink href={VIDEOS.pay}>הפגיעה בשכר המורים</InlineLink>, <InlineLink href={VIDEOS.violence}>האלימות בבתי הספר</InlineLink>, <InlineLink href={VIDEOS.strikes}>השביתות</InlineLink>, <InlineLink href={VIDEOS.reforms}>הרפורמות התכופות</InlineLink>, <InlineLink href={VIDEOS.remoteLearning}>קשיי הלמידה מרחוק</InlineLink>, תופעת '<InlineLink href={VIDEOS.homeroom}>קליפ המחנכים</InlineLink>', ועוד. קצת לאחר 7.10 הפקנו <InlineLink href={VIDEOS.october}>קליפ הצדעה</InlineLink> לבוגרינו האהובים, שלחמו ב'חרבות ברזל', וחלקם לא שבו.
   </>,
 
   <>

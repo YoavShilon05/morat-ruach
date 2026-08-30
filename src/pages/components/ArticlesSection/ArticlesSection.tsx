@@ -9,7 +9,7 @@ export default function ArticlesSection() {
     <Box as="section" id="press" bg="bg.surface" py={{ base: 14, md: 20 }} px={6}>
       <VStack maxW="5xl" mx="auto" gap={10}>
         <Reveal>
-          <SectionHeading eyebrow="בתקשורת" title="כתבו עלינו" />
+          <SectionHeading title="מורת רוח בתקשורת" />
         </Reveal>
 
         <SimpleGrid columns={{ base: 2, md: 4 }} gap={4} width="100%">
