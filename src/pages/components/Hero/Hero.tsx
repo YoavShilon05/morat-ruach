@@ -34,6 +34,7 @@ export default function Hero() {
           fontFamily="heading"
           fontWeight="900"
           fontSize={{ base: "4xl", md: "6xl" }}
+          mt={{base: 0, md: "35px"}}
           color="text.onDark"
           maxW="4xl"
           lineHeight="1.15"
@@ -50,7 +51,7 @@ export default function Hero() {
           maxW="2xl"
           lineHeight="1.15"
         >
-           המופע שכל חדר המורים חייב לראות
+          המופע שיעשה לכם בית ספר
         </Heading>
         <Text fontFamily="body" fontSize={{ base: "md", md: "lg" }} color="text.onDark" opacity={0.9} maxW="2xl">
           75 דקות של צחוק בלתי פוסק, קצת דמעות, והמון "איזה כיף לדעת שכולם מרגישים כמונו".

@@ -1,4 +1,4 @@
-import { Box, Carousel, For, LocaleProvider, VStack, useBreakpointValue } from "@chakra-ui/react"
+import { Box, Carousel, For, HStack, LocaleProvider, VStack, useBreakpointValue } from "@chakra-ui/react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import SectionHeading from "@/components/SectionHeading/SectionHeading.tsx"
 import Reveal from "@/components/Reveal/Reveal.tsx"
@@ -30,32 +30,44 @@ export default function PodcastSection() {
               loop
               allowMouseDrag
             >
-              <Carousel.ItemGroup
-                alignItems="stretch"
-                py={6}
-                px={{ base: 6, md: 4 }}
-                scrollPaddingInline={{ base: 6, md: 4 }}
-              >
-                <For each={PODCAST_EPISODES}>
-                  {(video, i) => (
-                    <Carousel.Item key={video.href} index={i} display="flex">
-                      <VideoCard index={i + 1} video={video} />
-                    </Carousel.Item>
-                  )}
-                </For>
-              </Carousel.ItemGroup>
-
-              <Carousel.Control justifyContent="center" gap={4}>
-                <Carousel.PrevTrigger aria-label="הפרק הקודם" color="text.onDark" opacity={0.7} _hover={{ opacity: 1 }}>
-                  <ChevronRight size={22} />
+              <HStack width="100%" gap={{ base: 0, md: 2 }}>
+                <Carousel.PrevTrigger
+                  aria-label="הפרק הקודם"
+                  flexShrink={0}
+                  color="text.onDark"
+                  opacity={0.7}
+                  _hover={{ opacity: 1 }}
+                >
+                  <ChevronRight size={32} />
                 </Carousel.PrevTrigger>
 
-                <Carousel.Indicators bg="whiteAlpha.400" _current={{ bg: "text.onDark" }} />
+                <Carousel.ItemGroup
+                  alignItems="stretch"
+                  py={6}
+                  px={{ base: 6, md: 4 }}
+                  scrollPaddingInline={{ base: 6, md: 4 }}
+                  flex="1"
+                  minW={0}
+                >
+                  <For each={PODCAST_EPISODES}>
+                    {(video, i) => (
+                      <Carousel.Item key={video.href} index={i} display="flex">
+                        <VideoCard index={i + 1} video={video} />
+                      </Carousel.Item>
+                    )}
+                  </For>
+                </Carousel.ItemGroup>
 
-                <Carousel.NextTrigger aria-label="הפרק הבא" color="text.onDark" opacity={0.7} _hover={{ opacity: 1 }}>
-                  <ChevronLeft size={22} />
+                <Carousel.NextTrigger
+                  aria-label="הפרק הבא"
+                  flexShrink={0}
+                  color="text.onDark"
+                  opacity={0.7}
+                  _hover={{ opacity: 1 }}
+                >
+                  <ChevronLeft size={32} />
                 </Carousel.NextTrigger>
-              </Carousel.Control>
+              </HStack>
             </Carousel.Root>
           </LocaleProvider>
         </Reveal>
