@@ -1,4 +1,4 @@
-import { Box, Carousel, For, LocaleProvider, VStack, useBreakpointValue } from "@chakra-ui/react"
+import { Box, Carousel, For, HStack, LocaleProvider, VStack, useBreakpointValue } from "@chakra-ui/react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import SectionHeading from "@/components/SectionHeading/SectionHeading.tsx"
 import Reveal from "@/components/Reveal/Reveal.tsx"
@@ -14,7 +14,6 @@ export const AudienceComments = () => {
         <Reveal>
           <SectionHeading
             title="תגובות הצופים"
-            subtitle="ככה זה מרגיש לצאת מהמופע — בין צחוק גדול לדמעות של הזדהות."
           />
         </Reveal>
 
@@ -30,27 +29,37 @@ export const AudienceComments = () => {
               loop
               allowMouseDrag
             >
-              <Carousel.ItemGroup alignItems="stretch" py={10}>
-                <For each={AUDIENCE_COMMENTS}>
-                  {(comment, i) => (
-                    <Carousel.Item key={i} index={i} display="flex">
-                      <CommentCard comment={comment} />
-                    </Carousel.Item>
-                  )}
-                </For>
-              </Carousel.ItemGroup>
-
-              <Carousel.Control justifyContent="center" gap={4}>
-                <Carousel.PrevTrigger aria-label="התגובה הקודמת" color="board.900" opacity={0.7} _hover={{ opacity: 1 }}>
-                  <ChevronRight size={22} />
+              <HStack width="100%" gap={{ base: 0, md: 2 }}>
+                <Carousel.PrevTrigger
+                  aria-label="התגובה הקודמת"
+                  flexShrink={0}
+                  color="board.900"
+                  opacity={0.7}
+                  _hover={{ opacity: 1 }}
+                >
+                  <ChevronRight size={32} />
                 </Carousel.PrevTrigger>
 
-                <Carousel.Indicators bg="board.900/30" _current={{ bg: "board.900" }} />
+                <Carousel.ItemGroup alignItems="stretch" py={10} flex="1" minW={0}>
+                  <For each={AUDIENCE_COMMENTS}>
+                    {(comment, i) => (
+                      <Carousel.Item key={i} index={i} display="flex">
+                        <CommentCard comment={comment} />
+                      </Carousel.Item>
+                    )}
+                  </For>
+                </Carousel.ItemGroup>
 
-                <Carousel.NextTrigger aria-label="התגובה הבאה" color="board.900" opacity={0.7} _hover={{ opacity: 1 }}>
-                  <ChevronLeft size={22} />
+                <Carousel.NextTrigger
+                  aria-label="התגובה הבאה"
+                  flexShrink={0}
+                  color="board.900"
+                  opacity={0.7}
+                  _hover={{ opacity: 1 }}
+                >
+                  <ChevronLeft size={32} />
                 </Carousel.NextTrigger>
-              </Carousel.Control>
+              </HStack>
             </Carousel.Root>
           </LocaleProvider>
         </Reveal>
