@@ -14,7 +14,6 @@ export const AudienceComments = () => {
         <Reveal>
           <SectionHeading
             title="תגובות הצופים"
-            subtitle="ככה זה מרגיש לצאת מהמופע — בין צחוק גדול לדמעות של הזדהות."
           />
         </Reveal>
 
