@@ -7,6 +7,10 @@ import {chalkTexture} from "@/components/SectionHeading/SectionHeading.tsx";
 import {whatsappLink} from "@/pages/content.ts";
 import WhatsappIcon from "@/assets/icons/whatsapp.svg?react"
 
+const HERO_ART_WIDTH = "480px"
+const HERO_LOGO_WIDTH = "264px" // 55% of the art width
+const HERO_TEXT_OFFSET = "530px" // tune this: distance from page top to the text
+
 export default function Hero() {
   return (
     <Box position="relative" minH={{ base: "90vh", md: "100vh" }} overflow="hidden" bg="board.900" id="top">
@@ -14,7 +18,7 @@ export default function Hero() {
         position="absolute"
         inset={0}
         backgroundImage={{ base: `url(${heroImageVertical})`, sm: `url(${heroImage})` }}
-        backgroundSize={{ base: "110% auto", sm: "cover" }}
+        backgroundSize={{ base: `${HERO_ART_WIDTH} auto`, sm: "cover" }}
         backgroundRepeat="no-repeat"
         backgroundPosition={{ base: "top center", sm: "center 20%" }}
         opacity={0.9}
@@ -27,7 +31,7 @@ export default function Hero() {
         right={0}
         zIndex={0}
       >
-        <Image src={logo} alt="מורת רוח" w="55%" maxW="260px" mx="auto" display="block" />
+        <Image src={logo} alt="מורת רוח" w={HERO_LOGO_WIDTH} mx="auto" display="block" />
       </Box>
 
       <Box position="absolute" inset={0} bgGradient="to-t" gradientFrom="board.800" gradientVia={{base: "rgba(11,33,29,0.25)", sm: "rgba(11,33,29,0.55)"}} gradientTo={{base: "rgba(11,33,29,0.05)", sm: "rgba(11,33,29,0.15)"}} />
@@ -37,10 +41,10 @@ export default function Hero() {
         position="relative"
         zIndex={1}
         minH={{ base: "85vh", md: "100vh" }}
-        justify={{ base: "flex-end", sm: "center" }}
+        justify={{ base: "flex-start", sm: "center" }}
         align="center"
-        pb={{ base: "20px", sm: 0 }}
-        pt={{ base: "15vw", sm: 0 }}
+        pb={{ base: "0vh", sm: 0 }}
+        pt={{ base: HERO_TEXT_OFFSET, sm: 0 }}
         textAlign="center"
         px={6}
         gap={5}
