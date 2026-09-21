@@ -14,7 +14,7 @@ export default function PodcastSection() {
         <Reveal>
           <SectionHeading
             title={'הפודקאסט "שעת שהייה"'}
-            subtitle="שיחות על מה שקורה בחדר המורים, מעבר לצלצול."
+            // subtitle="שיחות על מה שקורה בחדר המורים, מעבר לצלצול."
             onDark
           />
         </Reveal>
