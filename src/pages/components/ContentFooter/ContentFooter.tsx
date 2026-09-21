@@ -15,7 +15,7 @@ export default function ContactFooter() {
             צרו קשר
           </Text>
           <Text fontFamily="body" color="text.onDark" opacity={0.8}>
-            להזמנת הופעות וקבלת פרטים, שלחו הודעה, ונחזור אליכם.
+            להזמנת הופעות וקבלת פרטים שלחו הודעה, ונחזור אליכם.
           </Text>
           <Button
             asChild

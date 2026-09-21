@@ -10,7 +10,7 @@ export const AudienceComments = () => {
 
   return (
     <Box as="section" id="comments" bg="accent.solid" py={{ base: 14, md: 20 }} px={{ base: 0, md: 2 }}>
-      <VStack maxW={{ base: "6xl", xl: "8xl" }} mx="auto" gap={{ base: 8, md: 10 }}>
+      <VStack maxW={{ base: "6xl", xl: "8xl" }} mx="auto" gap={{ base: 0, md: 10 }}>
         <Reveal>
           <SectionHeading
             title="תגובות הצופים"
@@ -40,7 +40,7 @@ export const AudienceComments = () => {
                   <ChevronRight size={32} />
                 </Carousel.PrevTrigger>
 
-                <Carousel.ItemGroup alignItems="stretch" py={10} flex="1" minW={0}>
+                <Carousel.ItemGroup alignItems="stretch" py={{base: 0, sm: 4}} flex="1" minW={0}>
                   <For each={AUDIENCE_COMMENTS}>
                     {(comment, i) => (
                       <Carousel.Item key={i} index={i} display="flex">

@@ -20,7 +20,7 @@ export default function AboutUs() {
 
   return (
     <Box as="section" id="about" bg="bg.surface" py={{ base: 16, md: 24 }} px={6}>
-      <VStack maxW="4xl" mx="auto" gap={10}>
+      <VStack maxW="4xl" mx="auto" gap={{base: 2, md: 8}}>
         <Reveal>
           <SectionHeading title="מי אנחנו?" />
         </Reveal>
