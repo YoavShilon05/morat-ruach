@@ -1,7 +1,7 @@
-import { Box, Carousel, For, HStack, LocaleProvider, VStack, useBreakpointValue } from "@chakra-ui/react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { Box, LocaleProvider, VStack, useBreakpointValue } from "@chakra-ui/react"
 import SectionHeading from "@/components/SectionHeading/SectionHeading.tsx"
 import Reveal from "@/components/Reveal/Reveal.tsx"
+import InfiniteCarousel from "@/components/InfiniteCarousel/InfiniteCarousel.tsx"
 import { CommentCard } from "@/pages/components/AudienceComments/CommentCard.tsx"
 import { AUDIENCE_COMMENTS } from "@/pages/components/AudienceComments/AudienceComments.config.ts"
 
@@ -19,48 +19,16 @@ export const AudienceComments = () => {
 
         <Reveal delay={0.1} width="100%">
           <LocaleProvider locale="he-IL">
-            <Carousel.Root
-              width="100%"
-              slideCount={AUDIENCE_COMMENTS.length}
+            <InfiniteCarousel
+              items={AUDIENCE_COMMENTS}
               slidesPerPage={slidesPerPage}
-              slidesPerMove={1}
-              spacing="24px"
-              autoplay={{ delay: 3000 }}
-              loop
-              allowMouseDrag
-            >
-              <HStack width="100%" gap={{ base: 0, md: 2 }}>
-                <Carousel.PrevTrigger
-                  aria-label="התגובה הקודמת"
-                  flexShrink={0}
-                  color="board.900"
-                  opacity={0.7}
-                  _hover={{ opacity: 1 }}
-                >
-                  <ChevronRight size={32} />
-                </Carousel.PrevTrigger>
-
-                <Carousel.ItemGroup alignItems="stretch" py={{base: 0, sm: 4}} flex="1" minW={0}>
-                  <For each={AUDIENCE_COMMENTS}>
-                    {(comment, i) => (
-                      <Carousel.Item key={i} index={i} display="flex">
-                        <CommentCard comment={comment} />
-                      </Carousel.Item>
-                    )}
-                  </For>
-                </Carousel.ItemGroup>
-
-                <Carousel.NextTrigger
-                  aria-label="התגובה הבאה"
-                  flexShrink={0}
-                  color="board.900"
-                  opacity={0.7}
-                  _hover={{ opacity: 1 }}
-                >
-                  <ChevronLeft size={32} />
-                </Carousel.NextTrigger>
-              </HStack>
-            </Carousel.Root>
+              autoplayDelay={3000}
+              arrowColor="board.900"
+              paddingY={{ base: 0, sm: 4 }}
+              prevLabel="התגובה הקודמת"
+              nextLabel="התגובה הבאה"
+              renderItem={(comment) => <CommentCard comment={comment} />}
+            />
           </LocaleProvider>
         </Reveal>
       </VStack>
