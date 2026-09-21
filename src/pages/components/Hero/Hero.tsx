@@ -1,6 +1,8 @@
-import {Box, Button, Heading, Text, VStack, HStack, Icon} from "@chakra-ui/react"
+import {Box, Button, Heading, Text, VStack, HStack, Icon, Image} from "@chakra-ui/react"
 import {ChevronDown } from "lucide-react"
 import heroImage from "@/assets/images/hero-cover.png"
+import heroImageVertical from "@/assets/images/hero-cover-vertical-empty.png"
+import logo from "@/assets/logos/logo.png"
 import {chalkTexture} from "@/components/SectionHeading/SectionHeading.tsx";
 import {whatsappLink} from "@/pages/content.ts";
 import WhatsappIcon from "@/assets/icons/whatsapp.svg?react"
@@ -11,26 +13,41 @@ export default function Hero() {
       <Box
         position="absolute"
         inset={0}
-        backgroundImage={`url(${heroImage})`}
-        backgroundSize="cover"
-        backgroundPosition="center 20%"
+        backgroundImage={{ base: `url(${heroImageVertical})`, sm: `url(${heroImage})` }}
+        backgroundSize={{ base: "110% auto", sm: "cover" }}
+        backgroundRepeat="no-repeat"
+        backgroundPosition={{ base: "top center", sm: "center 20%" }}
         opacity={0.9}
       />
-      <Box position="absolute" inset={0} bgGradient="to-t" gradientFrom="board.900" gradientVia="rgba(11,33,29,0.55)" gradientTo="rgba(11,33,29,0.15)" />
+      <Box
+        display={{ base: "block", sm: "none" }}
+        position="absolute"
+        top={0}
+        left={0}
+        right={0}
+        zIndex={0}
+      >
+        <Image src={logo} alt="מורת רוח" w="55%" maxW="260px" mx="auto" display="block" />
+      </Box>
+
+      <Box position="absolute" inset={0} bgGradient="to-t" gradientFrom="board.800" gradientVia={{base: "rgba(11,33,29,0.25)", sm: "rgba(11,33,29,0.55)"}} gradientTo={{base: "rgba(11,33,29,0.05)", sm: "rgba(11,33,29,0.15)"}} />
       <Box position="absolute" inset={0} {...chalkTexture} />
 
       <VStack
         position="relative"
         zIndex={1}
-        minH={{ base: "90vh", md: "100vh" }}
-        justify="center"
+        minH={{ base: "85vh", md: "100vh" }}
+        justify={{ base: "flex-end", sm: "center" }}
         align="center"
+        pb={{ base: "20px", sm: 0 }}
+        pt={{ base: "15vw", sm: 0 }}
         textAlign="center"
         px={6}
         gap={5}
       >
         <Heading
           as="h1"
+          display={{ base: "none", sm: "block" }}
           fontFamily="heading"
           fontWeight="900"
           fontSize={{ base: "4xl", md: "6xl" }}
@@ -43,10 +60,10 @@ export default function Hero() {
         </Heading>
         <Heading
           as="h4"
-          mt={""}
           fontFamily="heading"
-          fontWeight="900"
+          fontWeight="700"
           fontSize={{ base: "2xl", md: "3xl" }}
+          opacity={{base: 1, sm: 1}}
           color="text.onDark"
           maxW="2xl"
           lineHeight="1.15"
@@ -79,7 +96,7 @@ export default function Hero() {
 
       <Box
         position="absolute"
-        bottom={100}
+        bottom={{ base: 3, md: 100 }}
         left="50%"
         transform="translateX(-50%)"
         color="text.onDark"

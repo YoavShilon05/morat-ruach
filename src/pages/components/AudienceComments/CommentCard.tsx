@@ -1,17 +1,10 @@
-import { Card, Text, VStack, useBreakpointValue } from "@chakra-ui/react"
-import { useFitFontSize } from "@/hooks/useFitFontSize.ts"
+import { Card, Text, VStack } from "@chakra-ui/react"
+import {
+  DEFAULT_COMMENT_FONT_SIZE,
+  type AudienceComment,
+} from "@/pages/components/AudienceComments/AudienceComments.config.ts"
 
-// Bounds for the auto-fitted quote text, in px.
-const FONT_RANGE = { base: { min: 14, max: 22 }, md: { min: 15, max: 26 } }
-
-export function CommentCard({ comment }: { comment: string }) {
-  const { min, max } = useBreakpointValue(FONT_RANGE) ?? FONT_RANGE.base
-  const { boxRef, textRef, fontSize } = useFitFontSize<HTMLDivElement, HTMLParagraphElement>(
-    comment,
-    min,
-    max
-  )
-
+export function CommentCard({ comment }: { comment: AudienceComment }) {
   return (
     <Card.Root
       variant="elevated"
@@ -23,9 +16,14 @@ export function CommentCard({ comment }: { comment: string }) {
       boxShadow="0 12px 30px rgba(11,33,29,0.18)"
     >
       <Card.Body p={{ base: 5, md: 6 }} height="100%" overflow="hidden">
-        <VStack ref={boxRef} align="start" justify="center" gap={4} height="100%" overflow="hidden">
-          <Text ref={textRef} fontFamily="body" color="text.onLight" fontSize={`${fontSize}px`} lineHeight="1.6">
-            {comment}
+        <VStack align="start" justify="center" gap={4} height="100%" overflow="hidden">
+          <Text
+            fontFamily="body"
+            color="text.onLight"
+            fontSize={comment.fontSize ?? DEFAULT_COMMENT_FONT_SIZE}
+            lineHeight="1.6"
+          >
+            {comment.text}
           </Text>
         </VStack>
       </Card.Body>
