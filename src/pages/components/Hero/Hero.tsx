@@ -1,7 +1,8 @@
-import {Box, Button, Heading, Text, VStack, HStack, Icon} from "@chakra-ui/react"
+import {Box, Button, Heading, Text, VStack, HStack, Icon, Image} from "@chakra-ui/react"
 import {ChevronDown } from "lucide-react"
 import heroImage from "@/assets/images/hero-cover.png"
-import heroImageVertical from "@/assets/images/hero-cover-vertical.png"
+import heroImageVertical from "@/assets/images/hero-cover-vertical-empty.png"
+import logo from "@/assets/logos/logo.png"
 import {chalkTexture} from "@/components/SectionHeading/SectionHeading.tsx";
 import {whatsappLink} from "@/pages/content.ts";
 import WhatsappIcon from "@/assets/icons/whatsapp.svg?react"
@@ -13,11 +14,22 @@ export default function Hero() {
         position="absolute"
         inset={0}
         backgroundImage={{ base: `url(${heroImageVertical})`, sm: `url(${heroImage})` }}
-        backgroundSize={{ base: "100% auto", sm: "cover" }}
+        backgroundSize={{ base: "110% auto", sm: "cover" }}
         backgroundRepeat="no-repeat"
         backgroundPosition={{ base: "top center", sm: "center 20%" }}
         opacity={0.9}
       />
+      <Box
+        display={{ base: "block", sm: "none" }}
+        position="absolute"
+        top={0}
+        left={0}
+        right={0}
+        zIndex={0}
+      >
+        <Image src={logo} alt="מורת רוח" w="55%" maxW="260px" mx="auto" display="block" />
+      </Box>
+
       <Box position="absolute" inset={0} bgGradient="to-t" gradientFrom="board.800" gradientVia={{base: "rgba(11,33,29,0.25)", sm: "rgba(11,33,29,0.55)"}} gradientTo={{base: "rgba(11,33,29,0.05)", sm: "rgba(11,33,29,0.15)"}} />
       <Box position="absolute" inset={0} {...chalkTexture} />
 
@@ -27,7 +39,7 @@ export default function Hero() {
         minH={{ base: "85vh", md: "100vh" }}
         justify={{ base: "flex-end", sm: "center" }}
         align="center"
-        pb={{ base: "60px", sm: 0 }}
+        pb={{ base: "20px", sm: 0 }}
         pt={{ base: "15vw", sm: 0 }}
         textAlign="center"
         px={6}
@@ -48,19 +60,17 @@ export default function Hero() {
         </Heading>
         <Heading
           as="h4"
-          mt={{base: 12, sm: 0}}
-          mb={{ base: "auto", sm: 0 }}
           fontFamily="heading"
           fontWeight="700"
           fontSize={{ base: "2xl", md: "3xl" }}
-          opacity={{base: 0.8, sm: 1}}
+          opacity={{base: 1, sm: 1}}
           color="text.onDark"
           maxW="2xl"
           lineHeight="1.15"
         >
           המופע שיעשה לכם בית ספר
         </Heading>
-        <Text display={{ base: "none", sm: "block" }} fontFamily="body" fontSize={{ base: "md", md: "lg" }} color="text.onDark" opacity={0.9} maxW="2xl">
+        <Text fontFamily="body" fontSize={{ base: "md", md: "lg" }} color="text.onDark" opacity={0.9} maxW="2xl">
           75 דקות של צחוק בלתי פוסק, קצת דמעות, והמון "איזה כיף לדעת שכולם מרגישים כמונו".
         </Text>
         <HStack gap={4} pt={2} wrap="wrap" justify="center">
