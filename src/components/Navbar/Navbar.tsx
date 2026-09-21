@@ -79,25 +79,71 @@ export default function Navbar() {
         </HStack>
       </Flex>
 
-      <Box display={{ base: open ? "block" : "none", lg: "none" }}>
-        <Box px={4} pb={4} bg="board.900">
-          <HStack wrap="wrap" gap={4} mb={3}>
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                fontFamily="body"
-                fontSize="sm"
-                color="text.onDark"
-                onClick={() => setOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </HStack>
+      {/* Mobile side drawer */}
+      <Box
+        display={{ base: "block", lg: "none" }}
+        position="fixed"
+        inset={0}
+        zIndex={60}
+        bg="blackAlpha.600"
+        opacity={open ? 1 : 0}
+        pointerEvents={open ? "auto" : "none"}
+        transition="opacity 0.25s ease"
+        onClick={() => setOpen(false)}
+      />
+      <Flex
+        dir="rtl"
+        display={{ base: "flex", lg: "none" }}
+        direction="column"
+        position="fixed"
+        top={0}
+        right={0}
+        h="100dvh"
+        w="min(64vw, 260px)"
+        zIndex={70}
+        bg="board.900"
+        borderLeft="1px solid"
+        borderColor="whiteAlpha.100"
+        boxShadow="dark-lg"
+        transform={open ? "translateX(0)" : "translateX(100%)"}
+        transition="transform 0.3s ease"
+        px={6}
+        py={5}
+        gap={6}
+      >
+        <Flex justify="flex-end">
+          <IconButton
+            aria-label="סגירת תפריט"
+            variant="ghost"
+            color="text.onDark"
+            size="lg"
+            onClick={() => setOpen(false)}
+          >
+            <X size={24} />
+          </IconButton>
+        </Flex>
+
+        <Flex direction="column" gap={5} align="flex-start" textAlign="start">
+          {NAV_LINKS.map((link) => (
+            <Link
+              key={link.label}
+              href={link.href}
+              fontFamily="body"
+              fontSize="lg"
+              color="text.onDark"
+              opacity={0.9}
+              _hover={{ opacity: 1, color: "accent.solid" }}
+              onClick={() => setOpen(false)}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </Flex>
+
+        <Box mt="auto" pt={4} borderTop="1px solid" borderColor="whiteAlpha.100">
           <SocialIcons />
         </Box>
-      </Box>
+      </Flex>
     </Box>
   )
 }
