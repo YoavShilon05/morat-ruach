@@ -25,7 +25,7 @@ export default function AboutUs() {
           <SectionHeading title="מי אנחנו?" />
         </Reveal>
 
-        <VStack gap={4} align="start" fontFamily="body" color="text.onLight" lineHeight="1.9" fontSize="md">
+        <VStack gap={4} align="start" fontFamily="body" color="text.onLight" lineHeight="1.9" fontSize={{base: "md", sm: "lg"}}>
           {displayedParagraphs.map((p, i) => (
             <Reveal key={i} delay={i * 0.05}>
               <RichText>{p}</RichText>

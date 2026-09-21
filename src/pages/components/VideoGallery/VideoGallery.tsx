@@ -6,11 +6,11 @@ import { CLIPS } from "@/pages/content.ts"
 import { VideoCard } from "@/pages/components/VideoGallery/VideoCard.tsx"
 
 export default function VideoGallery() {
-  const slidesPerPage = useBreakpointValue({ base: 2, sm: 3, md: 4 }) ?? 1
+  const slidesPerPage = useBreakpointValue({ base: 2, sm: 3, md: 4, lg: 5 }) ?? 1
 
   return (
     <Box as="section" id="videos" bg="board.900" py={{ base: 16, md: 24 }} px={{ base: 0, md: 2 }}>
-      <VStack maxW="8xl" mx="auto" gap={{ base: 8, md: 12 }}>
+      <VStack maxW="8xl" mx="auto" gap={{ base: 0, md: 12 }}>
         <Reveal>
           <SectionHeading
             title="הקליפים שלנו"
