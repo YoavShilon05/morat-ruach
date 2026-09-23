@@ -22,6 +22,7 @@ export function CommentCard({ comment }: { comment: AudienceComment }) {
             color="text.onLight"
             fontSize={comment.fontSize ?? DEFAULT_COMMENT_FONT_SIZE}
             lineHeight="1.6"
+            whiteSpace="pre-line"
           >
             {comment.text}
           </Text>
